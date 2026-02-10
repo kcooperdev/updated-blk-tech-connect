@@ -1,13 +1,9 @@
+"use client";
+
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import Link from "next/link";
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Partners | BLK Tech Connect",
-  description:
-    "Explore our community partners and learn how your organization can partner with BLK Tech Connect.",
-};
+import { capture } from "@/lib/posthog";
 
 const currentPartners = [
   {
@@ -100,6 +96,12 @@ const typeColors: Record<string, string> = {
 };
 
 export default function PartnersPage() {
+  const handlePartnerInquiryClick = () => {
+    capture("partner_inquiry_clicked", {
+      source: "partners_page",
+    });
+  };
+
   return (
     <div className="min-h-screen bg-black">
       <Header />
@@ -195,6 +197,7 @@ export default function PartnersPage() {
             </p>
             <Link
               href="/contact"
+              onClick={handlePartnerInquiryClick}
               className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-white px-7 py-3 text-sm font-medium text-black transition-all duration-200 hover:bg-white/90 active:scale-[0.98]"
             >
               Get in Touch

@@ -1,12 +1,8 @@
+"use client";
+
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Events | BLK Tech Connect",
-  description:
-    "Monthly online tech events, panels, happy hours, and workshops for the BLK Tech Connect community.",
-};
+import { capture } from "@/lib/posthog";
 
 const upcomingEvents = [
   {
@@ -67,6 +63,19 @@ const upcomingEvents = [
 ];
 
 export default function EventsPage() {
+  const handleRsvpClick = (eventTitle: string, eventType: string) => {
+    capture("event_rsvp_clicked", {
+      event_title: eventTitle,
+      event_type: eventType,
+    });
+  };
+
+  const handleDiscordJoinClick = () => {
+    capture("discord_join_clicked", {
+      source: "events_page",
+    });
+  };
+
   return (
     <div className="min-h-screen bg-black">
       <Header />
@@ -132,6 +141,7 @@ export default function EventsPage() {
                       href={event.rsvpLink}
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={() => handleRsvpClick(event.title, event.type)}
                       className="inline-flex shrink-0 items-center justify-center gap-1.5 rounded-full border border-white/20 bg-transparent px-5 py-2 text-[13px] font-medium text-white transition-all duration-200 hover:bg-white/5 hover:border-white/30 active:scale-[0.98] sm:self-center"
                     >
                       RSVP
@@ -173,6 +183,7 @@ export default function EventsPage() {
                 href="https://discord.gg/sWwXdzeB"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={handleDiscordJoinClick}
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-7 py-3 text-sm font-medium text-black transition-all duration-200 hover:bg-white/90 active:scale-[0.98]"
               >
                 Join Discord

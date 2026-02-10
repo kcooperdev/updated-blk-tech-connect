@@ -1,13 +1,9 @@
+"use client";
+
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import Link from "next/link";
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Get Involved | BLK Tech Connect",
-  description:
-    "Join the BLK Tech Connect community. Whether you're a technologist, founder, mentor, or partner — there's a place for you.",
-};
+import { capture } from "@/lib/posthog";
 
 const ways = [
   {
@@ -116,6 +112,25 @@ const colorMap: Record<string, string> = {
 };
 
 export default function GetInvolvedPage() {
+  const handleCtaClick = (title: string, cta: string, external: boolean) => {
+    capture("get_involved_cta_clicked", {
+      card_title: title,
+      cta_text: cta,
+      is_external: external,
+    });
+  };
+
+  const handleNewsletterSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const email = (form.elements.namedItem("email") as HTMLInputElement)?.value;
+
+    capture("get_involved_newsletter_subscribed", {
+      source: "get_involved_page",
+      email_provided: !!email,
+    });
+  };
+
   return (
     <div className="min-h-screen bg-black">
       <Header />
@@ -165,6 +180,7 @@ export default function GetInvolvedPage() {
                       href={way.href}
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={() => handleCtaClick(way.title, way.cta, way.external)}
                       className="inline-flex items-center gap-1.5 text-[13px] font-medium text-white/60 transition-colors hover:text-white"
                     >
                       {way.cta}
@@ -176,6 +192,7 @@ export default function GetInvolvedPage() {
                   ) : (
                     <Link
                       href={way.href}
+                      onClick={() => handleCtaClick(way.title, way.cta, way.external)}
                       className="inline-flex items-center gap-1.5 text-[13px] font-medium text-white/60 transition-colors hover:text-white"
                     >
                       {way.cta}
@@ -200,8 +217,9 @@ export default function GetInvolvedPage() {
               Get the latest on events, job drops, and community news delivered
               to your inbox.
             </p>
-            <form className="mt-8 flex gap-2">
+            <form onSubmit={handleNewsletterSubmit} className="mt-8 flex gap-2">
               <input
+                name="email"
                 type="email"
                 placeholder="Enter your email"
                 className="flex-1 rounded-lg border border-white/[0.08] bg-white/[0.04] px-4 py-2.5 text-[13px] text-white placeholder:text-white/25 focus:border-white/20 focus:outline-none transition-colors duration-200"

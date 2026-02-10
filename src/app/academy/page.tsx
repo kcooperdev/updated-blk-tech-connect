@@ -1,13 +1,9 @@
+"use client";
+
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import Button from "@/components/ui/Button";
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Academy | BLK Tech Connect",
-  description:
-    "BLK Tech Connect Academy — a tech course marketplace for creators. Courses in coding, design, and leadership. Coming soon.",
-};
+import { capture } from "@/lib/posthog";
 
 const plannedCourses = [
   {
@@ -53,6 +49,16 @@ const categoryColors: Record<string, string> = {
 };
 
 export default function AcademyPage() {
+  const handleNotifySubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const email = (form.elements.namedItem("email") as HTMLInputElement)?.value;
+
+    capture("academy_notify_submitted", {
+      email_provided: !!email,
+    });
+  };
+
   return (
     <div className="min-h-screen bg-black">
       <Header />
@@ -134,8 +140,9 @@ export default function AcademyPage() {
               Drop your email and we&apos;ll notify you when the Academy
               launches this fall.
             </p>
-            <form className="mt-8 flex gap-2">
+            <form onSubmit={handleNotifySubmit} className="mt-8 flex gap-2">
               <input
+                name="email"
                 type="email"
                 placeholder="Enter your email"
                 className="flex-1 rounded-lg border border-white/[0.08] bg-white/[0.04] px-4 py-2.5 text-[13px] text-white placeholder:text-white/25 focus:border-white/20 focus:outline-none transition-colors duration-200"

@@ -1,12 +1,8 @@
+"use client";
+
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Newsletter | BLK Tech Connect",
-  description:
-    "Subscribe to the BLK Tech Connect newsletter. Get the latest on events, job drops, and tech news curated for the culture.",
-};
+import { capture } from "@/lib/posthog";
 
 const highlights = [
   {
@@ -60,6 +56,17 @@ const highlights = [
 ];
 
 export default function NewsletterPage() {
+  const handleNewsletterSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const email = (form.elements.namedItem("email") as HTMLInputElement)?.value;
+
+    capture("newsletter_subscribed", {
+      source: "newsletter_page",
+      email_provided: !!email,
+    });
+  };
+
   return (
     <div className="min-h-screen bg-black">
       <Header />
@@ -78,8 +85,9 @@ export default function NewsletterPage() {
               Get the latest on events, job drops, and tech news curated for the
               culture. Delivered to your inbox weekly.
             </p>
-            <form className="mx-auto mt-10 flex max-w-md gap-2">
+            <form onSubmit={handleNewsletterSubmit} className="mx-auto mt-10 flex max-w-md gap-2">
               <input
+                name="email"
                 type="email"
                 placeholder="Enter your email"
                 className="flex-1 rounded-lg border border-white/[0.08] bg-white/[0.04] px-4 py-3 text-[13px] text-white placeholder:text-white/25 focus:border-white/20 focus:outline-none transition-colors duration-200"

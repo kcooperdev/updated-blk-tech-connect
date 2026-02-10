@@ -1,51 +1,35 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export interface LogoProps {
   className?: string;
   variant?: "full" | "icon" | "footer";
 }
 
+const logoSizes = {
+  full: { width: 140, height: 128 },
+  icon: { width: 88, height: 80 },
+  footer: { width: 77, height: 70 },
+};
+
 export function Logo({ className = "", variant = "full" }: LogoProps) {
-  const btBadge = (
-    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-[11px] font-bold tracking-tight text-white">
-      BT
-    </div>
-  );
-
-  if (variant === "icon") {
-    return (
-      <Link
-        href="/"
-        className={`flex items-center ${className}`}
-        aria-label="BLK Tech Connect homepage"
-      >
-        {btBadge}
-      </Link>
-    );
-  }
-
-  if (variant === "footer") {
-    return (
-      <Link
-        href="/"
-        className={`flex items-center ${className}`}
-        aria-label="BLK Tech Connect homepage"
-      >
-        {btBadge}
-      </Link>
-    );
-  }
+  const { width, height } = logoSizes[variant];
 
   return (
     <Link
       href="/"
-      className={`flex items-center gap-2.5 ${className}`}
+      className={`flex items-center ${className}`}
       aria-label="BLK Tech Connect homepage"
     >
-      {btBadge}
-      <span className="text-[15px] font-semibold tracking-tight text-white">
-        BLK Tech Connect
-      </span>
+      <Image
+        src="/logo.png"
+        alt="BLK Tech Connect"
+        width={width}
+        height={height}
+        className="object-contain"
+        priority
+        unoptimized
+      />
     </Link>
   );
 }

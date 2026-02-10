@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import { Logo } from "./ui/Logo";
+import { capture } from "@/lib/posthog";
 
 const platformLinks = [
   { href: "/about", label: "About Us" },
@@ -55,6 +58,17 @@ function LinkColumn({
 }
 
 export function Footer() {
+  const handleNewsletterSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const email = (form.elements.namedItem("email") as HTMLInputElement)?.value;
+
+    capture("footer_newsletter_subscribed", {
+      source: "footer",
+      email_provided: !!email,
+    });
+  };
+
   return (
     <footer className="bg-[#0a0a0a]">
       {/* Newsletter + Nav links */}
@@ -70,8 +84,9 @@ export function Footer() {
                 Get the latest on events, job drops, and tech news curated for
                 the culture.
               </p>
-              <form className="mt-6 flex gap-2">
+              <form onSubmit={handleNewsletterSubmit} className="mt-6 flex gap-2">
                 <input
+                  name="email"
                   type="email"
                   placeholder="Enter your email"
                   className="flex-1 rounded-lg border border-white/[0.08] bg-white/[0.04] px-4 py-2.5 text-[13px] text-white placeholder:text-white/25 focus:border-white/20 focus:outline-none transition-colors duration-200"

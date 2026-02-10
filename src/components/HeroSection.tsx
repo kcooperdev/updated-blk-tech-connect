@@ -1,5 +1,8 @@
+"use client";
+
 import { AlertBanner } from "./AlertBanner";
 import Button from "./ui/Button";
+import { capture } from "@/lib/posthog";
 
 // Sparkle / diamond icon matching the screenshots
 const SparkleIcon = () => (
@@ -19,6 +22,13 @@ const SparkleIcon = () => (
 );
 
 export function HeroSection() {
+  const handleHeroCtaClick = (ctaText: string, destination: string) => {
+    capture("hero_cta_clicked", {
+      cta_text: ctaText,
+      destination: destination,
+    });
+  };
+
   return (
     <section className="relative overflow-hidden bg-black px-5 pb-16 pt-16 sm:px-8 sm:pb-20 sm:pt-20 md:pb-28 md:pt-28 lg:pb-36 lg:pt-32">
       {/* Radial glow behind hero text */}
@@ -26,7 +36,7 @@ export function HeroSection() {
 
       <div className="relative z-10 mx-auto max-w-3xl">
         <div className="flex flex-col items-center text-center">
-          <AlertBanner text="Applications coming soon fall '26" />
+          <AlertBanner text="Cohorts coming soon fall '26" />
 
           <h1 className="mt-10 text-[2.5rem] font-bold leading-[1.08] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-[4.5rem]">
             Bridging the
@@ -48,6 +58,7 @@ export function HeroSection() {
               as="a"
               href="/get-involved"
               className="px-7 py-3"
+              onClick={() => handleHeroCtaClick("Get Involved", "/get-involved")}
             >
               Get Involved
             </Button>
@@ -56,6 +67,7 @@ export function HeroSection() {
               as="a"
               href="/partners"
               className="px-7 py-3"
+              onClick={() => handleHeroCtaClick("Explore Partners", "/partners")}
             >
               Explore Partners
             </Button>

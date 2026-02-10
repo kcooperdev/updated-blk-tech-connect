@@ -1,12 +1,8 @@
+"use client";
+
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Contact | BLK Tech Connect",
-  description:
-    "Get in touch with the BLK Tech Connect team. Partnerships, sponsorships, general inquiries, and more.",
-};
+import { capture } from "@/lib/posthog";
 
 const contactOptions = [
   {
@@ -47,6 +43,16 @@ const contactOptions = [
 ];
 
 export default function ContactPage() {
+  const handleContactSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const subject = (form.elements.namedItem("subject") as HTMLSelectElement)?.value;
+
+    capture("contact_form_submitted", {
+      subject: subject || "not_selected",
+    });
+  };
+
   return (
     <div className="min-h-screen bg-black">
       <Header />
@@ -106,7 +112,7 @@ export default function ContactPage() {
               Fill out the form below and we&apos;ll get back to you within 48
               hours.
             </p>
-            <form className="space-y-5">
+            <form onSubmit={handleContactSubmit} className="space-y-5">
               <div className="grid gap-5 sm:grid-cols-2">
                 <div>
                   <label
@@ -117,6 +123,7 @@ export default function ContactPage() {
                   </label>
                   <input
                     id="firstName"
+                    name="firstName"
                     type="text"
                     className="w-full rounded-lg border border-white/[0.08] bg-white/[0.04] px-4 py-2.5 text-[13px] text-white placeholder:text-white/25 focus:border-white/20 focus:outline-none transition-colors duration-200"
                     placeholder="John"
@@ -131,6 +138,7 @@ export default function ContactPage() {
                   </label>
                   <input
                     id="lastName"
+                    name="lastName"
                     type="text"
                     className="w-full rounded-lg border border-white/[0.08] bg-white/[0.04] px-4 py-2.5 text-[13px] text-white placeholder:text-white/25 focus:border-white/20 focus:outline-none transition-colors duration-200"
                     placeholder="Doe"
@@ -146,6 +154,7 @@ export default function ContactPage() {
                 </label>
                 <input
                   id="email"
+                  name="email"
                   type="email"
                   className="w-full rounded-lg border border-white/[0.08] bg-white/[0.04] px-4 py-2.5 text-[13px] text-white placeholder:text-white/25 focus:border-white/20 focus:outline-none transition-colors duration-200"
                   placeholder="john@example.com"
@@ -160,6 +169,7 @@ export default function ContactPage() {
                 </label>
                 <select
                   id="subject"
+                  name="subject"
                   className="w-full rounded-lg border border-white/[0.08] bg-white/[0.04] px-4 py-2.5 text-[13px] text-white/50 focus:border-white/20 focus:outline-none transition-colors duration-200"
                 >
                   <option value="">Select a topic</option>
@@ -180,6 +190,7 @@ export default function ContactPage() {
                 </label>
                 <textarea
                   id="message"
+                  name="message"
                   rows={5}
                   className="w-full rounded-lg border border-white/[0.08] bg-white/[0.04] px-4 py-2.5 text-[13px] text-white placeholder:text-white/25 focus:border-white/20 focus:outline-none transition-colors duration-200 resize-none"
                   placeholder="Tell us what's on your mind..."
