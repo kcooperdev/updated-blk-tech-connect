@@ -6,9 +6,7 @@ import { NavLink } from "./ui/NavLink";
 
 const navLinks = [
   { href: "/ecosystem", label: "Ecosystem" },
-  { href: "/career-board", label: "Career Board" },
   { href: "/events", label: "Events" },
-  { href: "/academy", label: "Academy" },
   { href: "/press", label: "In The News" },
 ];
 

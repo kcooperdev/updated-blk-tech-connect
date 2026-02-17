@@ -63,22 +63,6 @@ const CalendarIcon = () => (
   </svg>
 );
 
-const AcademyIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="20"
-    height="20"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="1.5"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20" />
-  </svg>
-);
-
 const jobListings = [
   { title: "Senior Product Designer" },
   { title: "Full Stack Engineer" },
@@ -180,7 +164,7 @@ export function EcosystemSection() {
           {/* Bottom row - 2 cards */}
           <div className="grid gap-4 sm:grid-cols-2 md:gap-5">
             {/* Events */}
-            <Card className="flex flex-col">
+            <Card className="flex flex-col md:col-span-2">
               <CardIcon>
                 <CalendarIcon />
               </CardIcon>
@@ -195,23 +179,6 @@ export function EcosystemSection() {
                 >
                   View Calendar
                 </Link>
-              </CardFooter>
-            </Card>
-
-            {/* BLK Tech Connect Academy */}
-            <Card className="flex flex-col">
-              <CardIcon>
-                <AcademyIcon />
-              </CardIcon>
-              <CardTitle>BLK Tech Connect Academy</CardTitle>
-              <CardDescription>
-                A tech course marketplace for creators (coming soon).
-              </CardDescription>
-              <CardFooter>
-                <span className="inline-flex items-center gap-1.5 rounded-full border border-white/[0.08] bg-white/[0.04] px-3 py-1 text-[11px] font-medium text-white/40">
-                  <span className="h-1.5 w-1.5 rounded-full bg-amber-400" />
-                  Coming Soon
-                </span>
               </CardFooter>
             </Card>
           </div>

@@ -11,7 +11,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Ecosystem | BLK Tech Connect",
   description:
-    "Explore the BLK Tech Connect ecosystem — community, career board, events, and academy all in one platform.",
+    "Explore the BLK Tech Connect ecosystem — community and events all in one platform.",
 };
 
 const pillars = [
@@ -51,27 +51,6 @@ const pillars = [
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        <rect width="20" height="14" x="2" y="7" rx="2" ry="2" />
-        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
-      </svg>
-    ),
-    title: "Career Board",
-    description:
-      "Curated job listings from companies committed to diversity. Roles in engineering, design, product, and leadership — updated weekly.",
-  },
-  {
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="20"
-        height="20"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
         <rect width="18" height="18" x="3" y="4" rx="2" ry="2" />
         <line x1="16" x2="16" y1="2" y2="6" />
         <line x1="8" x2="8" y1="2" y2="6" />
@@ -81,26 +60,6 @@ const pillars = [
     title: "Events",
     description:
       "Monthly online tech events, panels, happy hours, and workshops. Connect with industry leaders and grow your network.",
-  },
-  {
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="20"
-        height="20"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20" />
-      </svg>
-    ),
-    title: "Academy",
-    description:
-      "BLK Tech Connect Academy — a tech course marketplace for creators. Curated courses in coding, design, and leadership. Coming soon.",
   },
 ];
 
