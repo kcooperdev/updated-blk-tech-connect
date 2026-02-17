@@ -18,7 +18,7 @@ const upcomingEvents = [
   {
     title: "Baltimore Tech Week: Tech At The Harbor Kickoff",
     date: "Upcoming",
-    time: "TBA",
+    time: "6:30 PM – 8:30 PM",
     type: "In-Person",
     location: "25 W Fayette St, Baltimore",
     description:
@@ -38,7 +38,7 @@ const upcomingEvents = [
   {
     title: "Charm City Cowork: Tech Cafe",
     date: "Upcoming",
-    time: "TBA",
+    time: "11:00 AM – 5:00 PM",
     type: "In-Person",
     location: "1010 St Paul St, Baltimore",
     description:
