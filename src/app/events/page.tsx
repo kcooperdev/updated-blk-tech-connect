@@ -14,7 +14,6 @@ const upcomingEvents = [
     description:
       "Come for the bourbon, stay for the clues, and end the night with new connections. Icebreaker puzzles, a talk from AI & Robotics R&D Lead Troi Williams, and open networking over great drinks.",
     rsvpLink: "https://luma.com/xm5xmhma",
-    attending: 162,
   },
   {
     title: "Baltimore Tech Week: Tech At The Harbor Kickoff",
@@ -25,7 +24,6 @@ const upcomingEvents = [
     description:
       "Kicking off Baltimore Tech Week with BLK Tech Connect. Join us at the harbor for networking, conversation, and community.",
     rsvpLink: "https://luma.com/g74prkcu",
-    attending: 92,
   },
   {
     title: "Palava Night #2: Grassroot to Groundbreaker",
@@ -36,7 +34,6 @@ const upcomingEvents = [
     description:
       "In partnership with Palava Hut — community leaders discuss building from the ground up, featuring a fireside chat with Kory Bailey and Jeffrey Scruggs during Black History Month.",
     rsvpLink: "https://luma.com/fhaiqk41",
-    attending: 89,
   },
   {
     title: "Charm City Cowork: Tech Cafe",
@@ -47,7 +44,6 @@ const upcomingEvents = [
     description:
       "Rooted in Baltimore. Powered by Community. Drop in to cowork, network, and support local Baltimore cafés and spaces during Baltimore Tech Week.",
     rsvpLink: "https://luma.com/pbeegk9h",
-    attending: 38,
   },
   {
     title: "BLK Tech Connect Online Launch",
@@ -58,7 +54,6 @@ const upcomingEvents = [
     description:
       "The virtual extension of our growing community. Meet new and existing members, hear the vision for the online community, and help shape what comes next.",
     rsvpLink: "https://luma.com/geqbg2j8",
-    attending: 77,
   },
 ];
 
@@ -132,9 +127,6 @@ export default function EventsPage() {
                       </p>
                       <p className="mt-3 text-[13px] text-white/25">
                         {event.date} · {event.time} · {event.location}
-                      </p>
-                      <p className="mt-1.5 text-[12px] text-white/20">
-                        {event.attending} going
                       </p>
                     </div>
                     <a
