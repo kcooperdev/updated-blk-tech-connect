@@ -11,7 +11,7 @@ const ways = [
     description:
       "Become a member of our Discord community. Access exclusive channels, job listings, mentorship circles, and connect with 750+ Black technologists.",
     cta: "Join Discord",
-    href: "https://discord.gg/blktechconnect",
+    href: "https://discord.gg/gWfhQFzbnB",
     external: true,
     color: "emerald",
     icon: (

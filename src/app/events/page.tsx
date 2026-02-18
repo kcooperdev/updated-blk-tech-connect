@@ -182,7 +182,7 @@ export default function EventsPage() {
             </p>
             <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
               <a
-                href="https://discord.gg/sWwXdzeB"
+                href="https://discord.gg/gWfhQFzbnB"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={handleDiscordJoinClick}
@@ -191,7 +191,7 @@ export default function EventsPage() {
                 Join Discord
               </a>
               <a
-                href="https://luma.com/blk-tech-connect-baltimore?k=c"
+                href="https://luma.com/calendar/manage/cal-64EiCORm0LBSWtj"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 px-7 py-3 text-sm font-medium text-white transition-all duration-200 hover:bg-white/5 hover:border-white/30 active:scale-[0.98]"
