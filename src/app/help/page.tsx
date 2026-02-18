@@ -26,11 +26,6 @@ const faqs = [
       "Yes — all BLK Tech Connect events are free for community members. We host monthly meetups, panels, workshops, and networking events both in-person (Baltimore area) and online.",
   },
   {
-    question: "How does the Career Board work?",
-    answer:
-      "Our Career Board features curated job listings from companies committed to diversity in tech. Listings are updated weekly and include roles across engineering, design, product, and leadership.",
-  },
-  {
     question: "When is the Academy launching?",
     answer:
       "BLK Tech Connect Academy is scheduled to launch in fall 2026. It will be a tech course marketplace featuring courses in coding, design, and leadership taught by industry professionals. Sign up for notifications on the Academy page.",

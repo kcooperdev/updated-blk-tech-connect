@@ -33,7 +33,7 @@ const timeline = [
     year: "2025",
     title: "Scaling Up",
     description:
-      "Launched the Career Board, partnered with 20+ companies, and began hosting weekly virtual events. Community grew to 500+ members.",
+      "Partnered with 10+ companies and began hosting weekly virtual events. Community grew to 500+ members.",
   },
   {
     year: "2026",

@@ -6,7 +6,6 @@ import { capture } from "@/lib/posthog";
 
 const platformLinks = [
   { href: "/about", label: "About Us" },
-  { href: "/team", label: "Our Team" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -16,8 +15,8 @@ const resourceLinks = [
 ];
 
 const socialLinks = [
-  { href: "https://linkedin.com", label: "LinkedIn", external: true },
-  { href: "https://instagram.com", label: "Instagram", external: true },
+  { href: "https://www.linkedin.com/company/blk-tech-connect/", label: "LinkedIn", external: true },
+  { href: "https://www.instagram.com/blktechconnect/", label: "Instagram", external: true },
 ];
 
 function LinkColumn({
