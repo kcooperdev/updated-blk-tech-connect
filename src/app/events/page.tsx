@@ -46,6 +46,16 @@ const upcomingEvents = [
     rsvpLink: "https://luma.com/pbeegk9h",
   },
   {
+    title: "Charm City Cowork: Red Emma's",
+    date: "Upcoming",
+    time: "TBA",
+    type: "In-Person",
+    location: "Red Emma's Bookstore Coffeehouse, Baltimore",
+    description:
+      "Rooted in Baltimore. Powered by Community. Drop in to cowork, network, and support local Baltimore cafés and spaces during Baltimore Tech Week.",
+    rsvpLink: "https://luma.com/dcfsuxe2",
+  },
+  {
     title: "BLK Tech Connect Online Launch",
     date: "Upcoming",
     time: "TBA",
