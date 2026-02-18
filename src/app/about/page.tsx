@@ -16,33 +16,6 @@ const stats = [
   { value: "100+", label: "Jobs Filled" },
 ];
 
-const timeline = [
-  {
-    year: "2023",
-    title: "The Idea",
-    description:
-      "BLK Tech Connect started as a small gathering of Black technologists in Baltimore who saw the need for a dedicated community.",
-  },
-  {
-    year: "2024",
-    title: "Community Launch",
-    description:
-      "We officially launched our Discord community, hosted our first monthly meetup, and grew to over 200 members in our first year.",
-  },
-  {
-    year: "2025",
-    title: "Scaling Up",
-    description:
-      "Partnered with 10+ companies and began hosting weekly virtual events. Community grew to 500+ members.",
-  },
-  {
-    year: "2026",
-    title: "The Ecosystem",
-    description:
-      "Building the full BLK Tech Connect ecosystem — Academy launching fall 2026, expanded partnerships, and a growing national presence.",
-  },
-];
-
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-black">
@@ -102,35 +75,6 @@ export default function AboutPage() {
                 We&apos;re not just building a network. We&apos;re building an
                 ecosystem that drives real economic mobility for our community.
               </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Timeline */}
-        <section className="border-t border-white/[0.04] px-5 py-16 sm:px-8 md:py-24">
-          <div className="mx-auto max-w-3xl">
-            <h2 className="mb-12 text-2xl font-bold tracking-tight text-white md:text-3xl">
-              Our Journey
-            </h2>
-            <div className="space-y-8">
-              {timeline.map((item) => (
-                <div key={item.year} className="flex gap-6">
-                  <div className="flex flex-col items-center">
-                    <span className="text-[13px] font-bold text-white/60">
-                      {item.year}
-                    </span>
-                    <div className="mt-2 h-full w-px bg-white/[0.08]" />
-                  </div>
-                  <div className="pb-8">
-                    <h3 className="text-[17px] font-semibold text-white">
-                      {item.title}
-                    </h3>
-                    <p className="mt-2 text-sm leading-relaxed text-white/40">
-                      {item.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
             </div>
           </div>
         </section>
