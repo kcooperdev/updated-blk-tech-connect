@@ -16,16 +16,6 @@ const upcomingEvents = [
     rsvpLink: "https://luma.com/xm5xmhma",
   },
   {
-    title: "Baltimore Tech Week: Tech At The Harbor Kickoff",
-    date: "Upcoming",
-    time: "6:30 PM – 8:30 PM",
-    type: "In-Person",
-    location: "25 W Fayette St, Baltimore",
-    description:
-      "Kicking off Baltimore Tech Week with BLK Tech Connect. Join us at the harbor for networking, conversation, and community.",
-    rsvpLink: "https://luma.com/g74prkcu",
-  },
-  {
     title: "Palava Night #2: Grassroot to Groundbreaker",
     date: "Feb 25, 2026",
     time: "6:30 PM – 8:30 PM",
