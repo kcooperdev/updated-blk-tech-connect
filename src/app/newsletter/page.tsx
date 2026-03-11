@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { capture } from "@/lib/posthog";
@@ -56,14 +57,20 @@ const highlights = [
 ];
 
 export default function NewsletterPage() {
-  const handleNewsletterSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const [email, setEmail] = React.useState("");
+
+  const handleNewsletterSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const form = e.currentTarget;
-    const email = (form.elements.namedItem("email") as HTMLInputElement)?.value;
+    if (!email) return;
+
+    await fetch("https://hooks.zapier.com/hooks/catch/24843724/ux8uizt/", {
+      method: "POST",
+      body: JSON.stringify({ email }),
+    });
 
     capture("newsletter_subscribed", {
       source: "newsletter_page",
-      email_provided: !!email,
+      email_provided: true,
     });
   };
 
@@ -90,11 +97,14 @@ export default function NewsletterPage() {
                 name="email"
                 type="email"
                 placeholder="Enter your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 className="flex-1 rounded-lg border border-white/[0.08] bg-white/[0.04] px-4 py-3 text-[13px] text-white placeholder:text-white/25 focus:border-white/20 focus:outline-none transition-colors duration-200"
               />
               <button
                 type="submit"
-                className="shrink-0 cursor-pointer rounded-lg bg-white px-6 py-3 text-[13px] font-semibold text-black transition-colors duration-200 hover:bg-white/90"
+                disabled={!email}
+                className="shrink-0 rounded-lg px-6 py-3 text-[13px] font-semibold transition-colors duration-200 disabled:cursor-not-allowed disabled:opacity-30 bg-white text-black cursor-pointer hover:bg-white/90"
               >
                 Subscribe
               </button>

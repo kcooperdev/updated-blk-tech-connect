@@ -125,10 +125,12 @@ export default function TeamPage() {
               us.
             </p>
             <a
-              href="/contact"
+              href="https://discord.gg/gWfhQFzbnB"
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-white px-7 py-3 text-sm font-medium text-black transition-all duration-200 hover:bg-white/90 active:scale-[0.98]"
             >
-              Get in Touch
+              Join Discord
             </a>
           </div>
         </section>

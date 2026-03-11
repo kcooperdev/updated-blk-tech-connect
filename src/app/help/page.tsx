@@ -33,7 +33,7 @@ const faqs = [
   {
     question: "How can I become a partner or sponsor?",
     answer:
-      "We partner with companies, organizations, and individuals who share our mission. Visit our Contact page or email partners@blktechconnect.com to discuss partnership opportunities.",
+      "We partner with companies, organizations, and individuals who share our mission. Email partners@blktechconnect.com or join our Discord to discuss partnership opportunities.",
   },
   {
     question: "I'm not in Baltimore. Can I still participate?",
@@ -43,7 +43,7 @@ const faqs = [
   {
     question: "How can I volunteer or contribute?",
     answer:
-      "We're always looking for mentors, speakers, event organizers, and contributors. Head to the Get Involved page or reach out to us through our Contact page.",
+      "We're always looking for mentors, speakers, event organizers, and contributors. Head to the Get Involved page or join our Discord community to get started.",
   },
 ];
 
@@ -100,12 +100,14 @@ export default function HelpPage() {
               Can&apos;t find what you&apos;re looking for? Reach out to our
               team directly.
             </p>
-            <Link
-              href="/contact"
+            <a
+              href="https://discord.gg/gWfhQFzbnB"
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-white px-7 py-3 text-sm font-medium text-black transition-all duration-200 hover:bg-white/90 active:scale-[0.98]"
             >
-              Contact Us
-            </Link>
+              Join Discord
+            </a>
           </div>
         </section>
       </main>

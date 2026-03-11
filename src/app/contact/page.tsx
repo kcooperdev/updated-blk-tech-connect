@@ -2,7 +2,6 @@
 
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { capture } from "@/lib/posthog";
 
 const contactOptions = [
   {
@@ -43,16 +42,6 @@ const contactOptions = [
 ];
 
 export default function ContactPage() {
-  const handleContactSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const form = e.currentTarget;
-    const subject = (form.elements.namedItem("subject") as HTMLSelectElement)?.value;
-
-    capture("contact_form_submitted", {
-      subject: subject || "not_selected",
-    });
-  };
-
   return (
     <div className="min-h-screen bg-black">
       <Header />
@@ -102,109 +91,6 @@ export default function ContactPage() {
           </div>
         </section>
 
-        {/* Contact form */}
-        <section className="border-t border-white/[0.04] px-5 py-16 sm:px-8 md:py-24">
-          <div className="mx-auto max-w-lg">
-            <h2 className="mb-2 text-2xl font-bold tracking-tight text-white md:text-3xl">
-              Send us a message.
-            </h2>
-            <p className="mb-8 text-[14px] text-white/40">
-              Fill out the form below and we&apos;ll get back to you within 48
-              hours.
-            </p>
-            <form onSubmit={handleContactSubmit} className="space-y-5">
-              <div className="grid gap-5 sm:grid-cols-2">
-                <div>
-                  <label
-                    htmlFor="firstName"
-                    className="mb-1.5 block text-[13px] font-medium text-white/50"
-                  >
-                    First Name
-                  </label>
-                  <input
-                    id="firstName"
-                    name="firstName"
-                    type="text"
-                    className="w-full rounded-lg border border-white/[0.08] bg-white/[0.04] px-4 py-2.5 text-[13px] text-white placeholder:text-white/25 focus:border-white/20 focus:outline-none transition-colors duration-200"
-                    placeholder="John"
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="lastName"
-                    className="mb-1.5 block text-[13px] font-medium text-white/50"
-                  >
-                    Last Name
-                  </label>
-                  <input
-                    id="lastName"
-                    name="lastName"
-                    type="text"
-                    className="w-full rounded-lg border border-white/[0.08] bg-white/[0.04] px-4 py-2.5 text-[13px] text-white placeholder:text-white/25 focus:border-white/20 focus:outline-none transition-colors duration-200"
-                    placeholder="Doe"
-                  />
-                </div>
-              </div>
-              <div>
-                <label
-                  htmlFor="email"
-                  className="mb-1.5 block text-[13px] font-medium text-white/50"
-                >
-                  Email
-                </label>
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  className="w-full rounded-lg border border-white/[0.08] bg-white/[0.04] px-4 py-2.5 text-[13px] text-white placeholder:text-white/25 focus:border-white/20 focus:outline-none transition-colors duration-200"
-                  placeholder="john@example.com"
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor="subject"
-                  className="mb-1.5 block text-[13px] font-medium text-white/50"
-                >
-                  Subject
-                </label>
-                <select
-                  id="subject"
-                  name="subject"
-                  className="w-full rounded-lg border border-white/[0.08] bg-white/[0.04] px-4 py-2.5 text-[13px] text-white/50 focus:border-white/20 focus:outline-none transition-colors duration-200"
-                >
-                  <option value="">Select a topic</option>
-                  <option value="general">General Inquiry</option>
-                  <option value="partnership">Partnership</option>
-                  <option value="sponsorship">Sponsorship</option>
-                  <option value="volunteer">Volunteering</option>
-                  <option value="media">Media / Press</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-              <div>
-                <label
-                  htmlFor="message"
-                  className="mb-1.5 block text-[13px] font-medium text-white/50"
-                >
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={5}
-                  className="w-full rounded-lg border border-white/[0.08] bg-white/[0.04] px-4 py-2.5 text-[13px] text-white placeholder:text-white/25 focus:border-white/20 focus:outline-none transition-colors duration-200 resize-none"
-                  placeholder="Tell us what's on your mind..."
-                />
-              </div>
-              <button
-                type="submit"
-                className="w-full cursor-pointer rounded-full bg-white px-7 py-3 text-sm font-medium text-black transition-all duration-200 hover:bg-white/90 active:scale-[0.98]"
-              >
-                Send Message
-              </button>
-            </form>
-          </div>
-        </section>
       </main>
       <Footer />
     </div>

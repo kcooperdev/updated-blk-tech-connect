@@ -195,13 +195,15 @@ export default function PartnersPage() {
               Ready to make an impact? Let&apos;s discuss how we can work
               together to support Black technologists and founders.
             </p>
-            <Link
-              href="/contact"
+            <a
+              href="https://discord.gg/gWfhQFzbnB"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={handlePartnerInquiryClick}
               className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-white px-7 py-3 text-sm font-medium text-black transition-all duration-200 hover:bg-white/90 active:scale-[0.98]"
             >
               Get in Touch
-            </Link>
+            </a>
           </div>
         </section>
       </main>

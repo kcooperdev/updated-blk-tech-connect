@@ -1,12 +1,12 @@
 "use client";
 
+import React from "react";
 import Link from "next/link";
 import { Logo } from "./ui/Logo";
 import { capture } from "@/lib/posthog";
 
 const platformLinks = [
   { href: "/about", label: "About Us" },
-  { href: "/contact", label: "Contact" },
 ];
 
 const resourceLinks = [
@@ -57,14 +57,20 @@ function LinkColumn({
 }
 
 export function Footer() {
-  const handleNewsletterSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const [email, setEmail] = React.useState("");
+
+  const handleNewsletterSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const form = e.currentTarget;
-    const email = (form.elements.namedItem("email") as HTMLInputElement)?.value;
+    if (!email) return;
+
+    await fetch("https://hooks.zapier.com/hooks/catch/24843724/ux8uizt/", {
+      method: "POST",
+      body: JSON.stringify({ email }),
+    });
 
     capture("footer_newsletter_subscribed", {
       source: "footer",
-      email_provided: !!email,
+      email_provided: true,
     });
   };
 
@@ -88,11 +94,14 @@ export function Footer() {
                   name="email"
                   type="email"
                   placeholder="Enter your email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   className="flex-1 rounded-lg border border-white/[0.08] bg-white/[0.04] px-4 py-2.5 text-[13px] text-white placeholder:text-white/25 focus:border-white/20 focus:outline-none transition-colors duration-200"
                 />
                 <button
                   type="submit"
-                  className="shrink-0 rounded-lg bg-white px-5 py-2.5 text-[13px] font-semibold text-black transition-colors duration-200 hover:bg-white/90 cursor-pointer"
+                  disabled={!email}
+                  className="shrink-0 rounded-lg px-5 py-2.5 text-[13px] font-semibold transition-colors duration-200 disabled:cursor-not-allowed disabled:opacity-30 bg-white text-black cursor-pointer hover:bg-white/90"
                 >
                   Subscribe
                 </button>

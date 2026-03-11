@@ -6,44 +6,14 @@ import { capture } from "@/lib/posthog";
 
 const upcomingEvents = [
   {
-    title: "Bots & Bourbon",
-    date: "Upcoming",
-    time: "6:00 PM – 8:30 PM",
+    title: "STEM And Sips",
+    date: "Apr 11, 2026",
+    time: "1:00 PM – 4:00 PM",
     type: "In-Person",
-    location: "Unity Bar & Restaurant, Baltimore",
+    location: "Adee's Coffee & Bar, Baltimore",
     description:
-      "Come for the bourbon, stay for the clues, and end the night with new connections. Icebreaker puzzles, a talk from AI & Robotics R&D Lead Troi Williams, and open networking over great drinks.",
-    rsvpLink: "https://luma.com/xm5xmhma",
-  },
-  {
-    title: "Palava Night #2: Grassroot to Groundbreaker",
-    date: "Feb 25, 2026",
-    time: "6:30 PM – 8:30 PM",
-    type: "In-Person",
-    location: "Nola Seafood & Spirits, Baltimore",
-    description:
-      "In partnership with Palava Hut — community leaders discuss building from the ground up, featuring a fireside chat with Kory Bailey and Jeffrey Scruggs during Black History Month.",
-    rsvpLink: "https://luma.com/fhaiqk41",
-  },
-  {
-    title: "Charm City Cowork: Tech Cafe",
-    date: "Upcoming",
-    time: "11:00 AM – 5:00 PM",
-    type: "In-Person",
-    location: "1010 St Paul St, Baltimore",
-    description:
-      "Rooted in Baltimore. Powered by Community. Drop in to cowork, network, and support local Baltimore cafés and spaces during Baltimore Tech Week.",
-    rsvpLink: "https://luma.com/pbeegk9h",
-  },
-  {
-    title: "Charm City Cowork: Red Emma's",
-    date: "Upcoming",
-    time: "TBA",
-    type: "In-Person",
-    location: "Red Emma's Bookstore Coffeehouse, Baltimore",
-    description:
-      "Rooted in Baltimore. Powered by Community. Drop in to cowork, network, and support local Baltimore cafés and spaces during Baltimore Tech Week.",
-    rsvpLink: "https://luma.com/dcfsuxe2",
+      "A BLK Tech Connect experience celebrating Black women in tech, innovators, trendsetters, and the leaders shaping the future of STEM — with intention, elevation, and community. AI innovators, cybersecurity pros, agile leaders, and bio/health tech experts come together for a curated brunch and the signature STEM & Sips Mimosa. Limited seats.",
+    rsvpLink: "https://luma.com/i9fz0x73",
   },
 ];
 

@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import Link from "next/link";
@@ -45,8 +46,8 @@ const ways = [
     description:
       "Share your expertise and help the next generation of Black technologists grow. Mentors meet with mentees monthly for career guidance and support.",
     cta: "Apply to Mentor",
-    href: "/contact",
-    external: false,
+    href: "https://discord.gg/gWfhQFzbnB",
+    external: true,
     color: "violet",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -59,8 +60,8 @@ const ways = [
     description:
       "Have expertise to share? We're always looking for speakers for panels, lightning talks, and workshops. Topics range from technical to career development.",
     cta: "Submit a Talk",
-    href: "/contact",
-    external: false,
+    href: "https://discord.gg/gWfhQFzbnB",
+    external: true,
     color: "emerald",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -94,8 +95,8 @@ const ways = [
     description:
       "Help us run events, moderate the community, create content, and more. Volunteers are the backbone of everything we do.",
     cta: "Get Started",
-    href: "/contact",
-    external: false,
+    href: "https://discord.gg/gWfhQFzbnB",
+    external: true,
     color: "violet",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -112,6 +113,8 @@ const colorMap: Record<string, string> = {
 };
 
 export default function GetInvolvedPage() {
+  const [email, setEmail] = React.useState("");
+
   const handleCtaClick = (title: string, cta: string, external: boolean) => {
     capture("get_involved_cta_clicked", {
       card_title: title,
@@ -120,14 +123,18 @@ export default function GetInvolvedPage() {
     });
   };
 
-  const handleNewsletterSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleNewsletterSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const form = e.currentTarget;
-    const email = (form.elements.namedItem("email") as HTMLInputElement)?.value;
+    if (!email) return;
+
+    await fetch("https://hooks.zapier.com/hooks/catch/24843724/ux8uizt/", {
+      method: "POST",
+      body: JSON.stringify({ email }),
+    });
 
     capture("get_involved_newsletter_subscribed", {
       source: "get_involved_page",
-      email_provided: !!email,
+      email_provided: true,
     });
   };
 
@@ -222,11 +229,14 @@ export default function GetInvolvedPage() {
                 name="email"
                 type="email"
                 placeholder="Enter your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 className="flex-1 rounded-lg border border-white/[0.08] bg-white/[0.04] px-4 py-2.5 text-[13px] text-white placeholder:text-white/25 focus:border-white/20 focus:outline-none transition-colors duration-200"
               />
               <button
                 type="submit"
-                className="shrink-0 cursor-pointer rounded-lg bg-white px-5 py-2.5 text-[13px] font-semibold text-black transition-colors duration-200 hover:bg-white/90"
+                disabled={!email}
+                className="shrink-0 rounded-lg px-5 py-2.5 text-[13px] font-semibold transition-colors duration-200 disabled:cursor-not-allowed disabled:opacity-30 bg-white text-black cursor-pointer hover:bg-white/90"
               >
                 Subscribe
               </button>
