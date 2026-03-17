@@ -124,29 +124,6 @@ export default function PressPage() {
           </div>
         </section>
 
-        {/* Media inquiries CTA */}
-        <section className="border-t border-white/[0.04] px-5 py-16 sm:px-8 md:py-24">
-          <div className="mx-auto max-w-3xl">
-            <div className="flex flex-col items-center gap-8 rounded-2xl border border-white/[0.06] bg-[#111111] p-8 text-center md:p-12">
-              <div>
-                <h2 className="text-2xl font-bold tracking-tight text-white md:text-3xl">
-                  Press & media inquiries
-                </h2>
-                <p className="mt-3 text-[14px] leading-relaxed text-white/40">
-                  Writing a story about BLK Tech Connect or want to feature us?
-                  We&apos;d love to hear from you. Reach out for interviews,
-                  media kits, or press materials.
-                </p>
-              </div>
-              <a
-                href="mailto:press@blktechconnect.com"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-7 py-3 text-sm font-medium text-black transition-all duration-200 hover:bg-white/90 active:scale-[0.98]"
-              >
-                Contact Press Team
-              </a>
-            </div>
-          </div>
-        </section>
       </main>
       <Footer />
     </div>
