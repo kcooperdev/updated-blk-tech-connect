@@ -125,3 +125,8 @@
 //     </div>
 //   );
 // }
+
+import { redirect } from "next/navigation";
+export default function CareerBoardPage() {
+  redirect("/");
+}
