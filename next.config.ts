@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   /* config options here */
-  async rewrites() {
+  async rewrites() { 
     return [
       {
         source: "/ingest/static/:path*",
