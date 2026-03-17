@@ -16,7 +16,16 @@ const ways = [
     external: true,
     color: "emerald",
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round">
         <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
         <circle cx="9" cy="7" r="4" />
         <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
@@ -33,7 +42,16 @@ const ways = [
     external: false,
     color: "amber",
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round">
         <rect width="18" height="18" x="3" y="4" rx="2" ry="2" />
         <line x1="16" x2="16" y1="2" y2="6" />
         <line x1="8" x2="8" y1="2" y2="6" />
@@ -50,46 +68,37 @@ const ways = [
     external: true,
     color: "violet",
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round">
         <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z" />
       </svg>
     ),
   },
-  {
-    title: "Speak at an Event",
-    description:
-      "Have expertise to share? We're always looking for speakers for panels, lightning talks, and workshops. Topics range from technical to career development.",
-    cta: "Submit a Talk",
-    href: "https://discord.gg/gWfhQFzbnB",
-    external: true,
-    color: "emerald",
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M12 6V2H8" />
-        <path d="m8 18-4 4V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2Z" />
-        <path d="M2 12h2" />
-        <path d="M9 11v2" />
-        <path d="M15 11v2" />
-        <path d="M20 12h2" />
-      </svg>
-    ),
-  },
-  {
-    title: "Partner With Us",
-    description:
-      "Companies and organizations can partner with BLK Tech Connect to access diverse talent, sponsor events, and support our mission.",
-    cta: "Become a Partner",
-    href: "/partners",
-    external: false,
-    color: "amber",
-    icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="10" />
-        <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
-        <path d="M2 12h20" />
-      </svg>
-    ),
-  },
+
+  // {
+  //   title: "Partner With Us",
+  //   description:
+  //     "Companies and organizations can partner with BLK Tech Connect to access diverse talent, sponsor events, and support our mission.",
+  //   cta: "Become a Partner",
+  //   href: "/partners",
+  //   external: false,
+  //   color: "amber",
+  //   icon: (
+  //     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+  //       <circle cx="12" cy="12" r="10" />
+  //       <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+  //       <path d="M2 12h20" />
+  //     </svg>
+  //   ),
+  // },
   {
     title: "Volunteer",
     description:
@@ -99,7 +108,16 @@ const ways = [
     external: true,
     color: "violet",
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round">
         <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
       </svg>
     ),
@@ -113,28 +131,11 @@ const colorMap: Record<string, string> = {
 };
 
 export default function GetInvolvedPage() {
-  const [email, setEmail] = React.useState("");
-
   const handleCtaClick = (title: string, cta: string, external: boolean) => {
     capture("get_involved_cta_clicked", {
       card_title: title,
       cta_text: cta,
       is_external: external,
-    });
-  };
-
-  const handleNewsletterSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    if (!email) return;
-
-    await fetch("https://hooks.zapier.com/hooks/catch/24843724/ux8uizt/", {
-      method: "POST",
-      body: JSON.stringify({ email }),
-    });
-
-    capture("get_involved_newsletter_subscribed", {
-      source: "get_involved_page",
-      email_provided: true,
     });
   };
 
@@ -155,9 +156,9 @@ export default function GetInvolvedPage() {
               <span className="text-gradient-muted">for you here.</span>
             </h1>
             <p className="mx-auto mt-6 max-w-xl text-[15px] leading-relaxed text-white/50 md:text-base">
-              Whether you&apos;re a technologist, founder, mentor, or
-              partner — join us in building the most impactful ecosystem for
-              Black professionals in tech.
+              Whether you&apos;re a technologist, founder, mentor, or partner —
+              join us in building the most impactful ecosystem for Black
+              professionals in tech.
             </p>
           </div>
         </section>
@@ -168,11 +169,9 @@ export default function GetInvolvedPage() {
             {ways.map((way) => (
               <div
                 key={way.title}
-                className="group rounded-2xl border border-white/[0.06] bg-[#111111] p-6 transition-all duration-300 hover:border-white/[0.1] hover:bg-[#161616]"
-              >
+                className="group rounded-2xl border border-white/[0.06] bg-[#111111] p-6 transition-all duration-300 hover:border-white/[0.1] hover:bg-[#161616]">
                 <div
-                  className={`mb-5 inline-flex h-10 w-10 items-center justify-center rounded-xl border ${colorMap[way.color]}`}
-                >
+                  className={`mb-5 inline-flex h-10 w-10 items-center justify-center rounded-xl border ${colorMap[way.color]}`}>
                   {way.icon}
                 </div>
                 <h3 className="text-[17px] font-semibold text-white">
@@ -187,11 +186,21 @@ export default function GetInvolvedPage() {
                       href={way.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      onClick={() => handleCtaClick(way.title, way.cta, way.external)}
-                      className="inline-flex items-center gap-1.5 text-[13px] font-medium text-white/60 transition-colors hover:text-white"
-                    >
+                      onClick={() =>
+                        handleCtaClick(way.title, way.cta, way.external)
+                      }
+                      className="inline-flex items-center gap-1.5 text-[13px] font-medium text-white/60 transition-colors hover:text-white">
                       {way.cta}
-                      <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="13"
+                        height="13"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round">
                         <path d="M7 7h10v10" />
                         <path d="M7 17 17 7" />
                       </svg>
@@ -199,11 +208,21 @@ export default function GetInvolvedPage() {
                   ) : (
                     <Link
                       href={way.href}
-                      onClick={() => handleCtaClick(way.title, way.cta, way.external)}
-                      className="inline-flex items-center gap-1.5 text-[13px] font-medium text-white/60 transition-colors hover:text-white"
-                    >
+                      onClick={() =>
+                        handleCtaClick(way.title, way.cta, way.external)
+                      }
+                      className="inline-flex items-center gap-1.5 text-[13px] font-medium text-white/60 transition-colors hover:text-white">
                       {way.cta}
-                      <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="13"
+                        height="13"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round">
                         <path d="m9 18 6-6-6-6" />
                       </svg>
                     </Link>
@@ -224,23 +243,14 @@ export default function GetInvolvedPage() {
               Get the latest on events, job drops, and community news delivered
               to your inbox.
             </p>
-            <form onSubmit={handleNewsletterSubmit} className="mt-8 flex gap-2">
-              <input
-                name="email"
-                type="email"
-                placeholder="Enter your email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="flex-1 rounded-lg border border-white/[0.08] bg-white/[0.04] px-4 py-2.5 text-[13px] text-white placeholder:text-white/25 focus:border-white/20 focus:outline-none transition-colors duration-200"
-              />
-              <button
-                type="submit"
-                disabled={!email}
-                className="shrink-0 rounded-lg px-5 py-2.5 text-[13px] font-semibold transition-colors duration-200 disabled:cursor-not-allowed disabled:opacity-30 bg-white text-black cursor-pointer hover:bg-white/90"
-              >
-                Subscribe
-              </button>
-            </form>
+            <a
+              href="https://blk-tech-connect.beehiiv.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-8 inline-flex items-center justify-center rounded-full bg-white px-7 py-3 text-sm font-medium text-black transition-all duration-200 hover:bg-white/90 active:scale-[0.98]"
+            >
+              Subscribe to Newsletter
+            </a>
           </div>
         </section>
       </main>

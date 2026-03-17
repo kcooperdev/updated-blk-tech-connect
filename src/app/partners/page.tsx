@@ -185,7 +185,7 @@ export default function PartnersPage() {
           </div>
         </section>
 
-        {/* CTA */}
+        {/* CTA - commented out
         <section className="border-t border-white/[0.04] px-5 py-16 sm:px-8 md:py-24">
           <div className="mx-auto max-w-md text-center">
             <h2 className="text-2xl font-bold tracking-tight text-white md:text-3xl">
@@ -206,6 +206,7 @@ export default function PartnersPage() {
             </a>
           </div>
         </section>
+        */}
       </main>
       <Footer />
     </div>

@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import Link from "next/link";
 import { Logo } from "./ui/Logo";
 import { capture } from "@/lib/posthog";
@@ -10,7 +9,7 @@ const platformLinks = [
 ];
 
 const resourceLinks = [
-  { href: "/newsletter", label: "Newsletter" },
+  { href: "https://blk-tech-connect.beehiiv.com/", label: "Newsletter", external: true },
   { href: "/help", label: "Help Center" },
 ];
 
@@ -57,63 +56,40 @@ function LinkColumn({
 }
 
 export function Footer() {
-  const [email, setEmail] = React.useState("");
-
-  const handleNewsletterSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    if (!email) return;
-
-    await fetch("https://hooks.zapier.com/hooks/catch/24843724/ux8uizt/", {
-      method: "POST",
-      body: JSON.stringify({ email }),
-    });
-
-    capture("footer_newsletter_subscribed", {
-      source: "footer",
-      email_provided: true,
-    });
-  };
+  const allLinks = [
+    ...platformLinks.map((l) => ({ ...l, external: false })),
+    ...resourceLinks.map((l) => ({ ...l, external: false })),
+    ...socialLinks,
+  ];
 
   return (
     <footer className="bg-[#0a0a0a]">
-      {/* Newsletter + Nav links */}
-      <div className="border-y border-white/[0.04] px-5 py-14 sm:px-8 md:py-16">
-        <div className="mx-auto max-w-5xl">
-          <div className="flex flex-col gap-12 lg:flex-row lg:items-start lg:justify-between">
-            {/* Newsletter */}
-            <div className="max-w-sm">
-              <h3 className="text-2xl font-bold tracking-tight text-white md:text-[1.75rem]">
-                Stay in the loop.
-              </h3>
-              <p className="mt-2 text-[14px] leading-relaxed text-white/40">
-                Get the latest on events, job drops, and tech news curated for
-                the culture.
-              </p>
-              <form onSubmit={handleNewsletterSubmit} className="mt-6 flex gap-2">
-                <input
-                  name="email"
-                  type="email"
-                  placeholder="Enter your email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="flex-1 rounded-lg border border-white/[0.08] bg-white/[0.04] px-4 py-2.5 text-[13px] text-white placeholder:text-white/25 focus:border-white/20 focus:outline-none transition-colors duration-200"
-                />
-                <button
-                  type="submit"
-                  disabled={!email}
-                  className="shrink-0 rounded-lg px-5 py-2.5 text-[13px] font-semibold transition-colors duration-200 disabled:cursor-not-allowed disabled:opacity-30 bg-white text-black cursor-pointer hover:bg-white/90"
+      {/* Nav links */}
+      <div className="border-y border-white/[0.04] px-5 py-10 sm:px-8">
+        <div className="mx-auto flex max-w-5xl flex-col items-center gap-6">
+          <Logo variant="footer" />
+          <div className="flex flex-wrap justify-center gap-x-8 gap-y-3">
+            {allLinks.map((link) =>
+              link.external ? (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[13px] text-white/35 transition-colors duration-200 hover:text-white/70"
                 >
-                  Subscribe
-                </button>
-              </form>
-            </div>
-
-            {/* Nav columns */}
-            <div className="grid grid-cols-2 gap-10 sm:grid-cols-3 sm:gap-12">
-              <LinkColumn title="Platform" links={platformLinks} />
-              <LinkColumn title="Resources" links={resourceLinks} />
-              <LinkColumn title="Social" links={socialLinks} />
-            </div>
+                  {link.label}
+                </a>
+              ) : (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="text-[13px] text-white/35 transition-colors duration-200 hover:text-white/70"
+                >
+                  {link.label}
+                </Link>
+              )
+            )}
           </div>
         </div>
       </div>
@@ -121,12 +97,9 @@ export function Footer() {
       {/* Copyright */}
       <div className="px-5 py-6 sm:px-8">
         <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-4 sm:flex-row">
-          <div className="flex items-center gap-3">
-            <Logo variant="footer" />
-            <span className="text-[13px] text-white/25">
-              © 2026 BLK Tech Connect. All rights reserved.
-            </span>
-          </div>
+          <span className="text-[13px] text-white/25">
+            © 2026 BLK Tech Connect. All rights reserved.
+          </span>
           <div className="flex gap-6">
             <Link
               href="/privacy"

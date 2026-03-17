@@ -6,14 +6,14 @@ import { capture } from "@/lib/posthog";
 
 const upcomingEvents = [
   {
-    title: "STEM And Sips",
-    date: "Apr 11, 2026",
-    time: "1:00 PM – 4:00 PM",
+    title: "BTW Pre-Event: Tech At The Harbor",
+    date: "Apr 23rd, 2026",
+    time: "6:00 PM – 8:30 PM",
     type: "In-Person",
-    location: "Adee's Coffee & Bar, Baltimore",
+    location: "The Harbor Bank of Maryland(Fayette Branch)",
     description:
-      "A BLK Tech Connect experience celebrating Black women in tech, innovators, trendsetters, and the leaders shaping the future of STEM — with intention, elevation, and community. AI innovators, cybersecurity pros, agile leaders, and bio/health tech experts come together for a curated brunch and the signature STEM & Sips Mimosa. Limited seats.",
-    rsvpLink: "https://luma.com/i9fz0x73",
+      "Tech at the Harbor is officially back as the Baltimore Tech Week Pre‑Tech Week Event, setting the tone for everything that’s coming next year.",
+    rsvpLink: "https://luma.com/8nr4g62o",
   },
 ];
 
@@ -64,8 +64,7 @@ export default function EventsPage() {
               {upcomingEvents.map((event) => (
                 <div
                   key={event.title}
-                  className="rounded-2xl border border-white/[0.06] bg-[#111111] p-5 transition-all duration-300 hover:border-white/[0.1] hover:bg-[#161616] md:p-6"
-                >
+                  className="rounded-2xl border border-white/[0.06] bg-[#111111] p-5 transition-all duration-300 hover:border-white/[0.1] hover:bg-[#161616] md:p-6">
                   <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                     <div className="flex-1">
                       <div className="flex items-center gap-2.5">
@@ -74,8 +73,7 @@ export default function EventsPage() {
                             event.type === "Online"
                               ? "border-emerald-400/20 bg-emerald-400/10 text-emerald-400"
                               : "border-amber-400/20 bg-amber-400/10 text-amber-400"
-                          }`}
-                        >
+                          }`}>
                           {event.type}
                         </span>
                         <h3 className="text-[15px] font-semibold text-white">
@@ -94,8 +92,7 @@ export default function EventsPage() {
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={() => handleRsvpClick(event.title, event.type)}
-                      className="inline-flex shrink-0 items-center justify-center gap-1.5 rounded-full border border-white/20 bg-transparent px-5 py-2 text-[13px] font-medium text-white transition-all duration-200 hover:bg-white/5 hover:border-white/30 active:scale-[0.98] sm:self-center"
-                    >
+                      className="inline-flex shrink-0 items-center justify-center gap-1.5 rounded-full border border-white/20 bg-transparent px-5 py-2 text-[13px] font-medium text-white transition-all duration-200 hover:bg-white/5 hover:border-white/30 active:scale-[0.98] sm:self-center">
                       RSVP
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -107,8 +104,7 @@ export default function EventsPage() {
                         strokeWidth="2"
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        className="text-white/50"
-                      >
+                        className="text-white/50">
                         <path d="M7 7h10v10" />
                         <path d="M7 17 17 7" />
                       </svg>
@@ -127,8 +123,8 @@ export default function EventsPage() {
               Don&apos;t miss out.
             </h2>
             <p className="mt-3 text-[14px] leading-relaxed text-white/40">
-              Join our community to get notified about new events, or browse
-              all upcoming events on Luma.
+              Join our community to get notified about new events, or browse all
+              upcoming events on Luma.
             </p>
             <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
               <a
@@ -136,16 +132,14 @@ export default function EventsPage() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={handleDiscordJoinClick}
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-7 py-3 text-sm font-medium text-black transition-all duration-200 hover:bg-white/90 active:scale-[0.98]"
-              >
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-7 py-3 text-sm font-medium text-black transition-all duration-200 hover:bg-white/90 active:scale-[0.98]">
                 Join Discord
               </a>
               <a
                 href="https://luma.com/calendar/manage/cal-64EiCORm0LBSWtj"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 px-7 py-3 text-sm font-medium text-white transition-all duration-200 hover:bg-white/5 hover:border-white/30 active:scale-[0.98]"
-              >
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-white/20 px-7 py-3 text-sm font-medium text-white transition-all duration-200 hover:bg-white/5 hover:border-white/30 active:scale-[0.98]">
                 View All on Luma
               </a>
             </div>
